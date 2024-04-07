@@ -1,0 +1,129 @@
+.anabelle-productview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.product-view  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.product-view img {
+    width: 400px;
+    height: 400px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.product-details p:nth-of-type(1){
+    font-size: 17px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-style: italic;
+    background-color: rgb(127, 255, 155);
+    padding: 4px 17px 4px 11px;
+    clip-path:  polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+}
+
+.product-details p:nth-of-type(2){
+    font-size: 17px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline rgb(127, 255, 155) 5px;
+    text-underline-offset:0px;
+    letter-spacing: 2px;
+}
+
+.product-details p:nth-of-type(3){
+    font-size: 32px;
+    font-style: italic;
+    font-family: 'Oswald';
+    font-weight: 600;
+    max-width: 500px;
+    letter-spacing: 1px;
+}
+
+.product-details p:nth-of-type(4){
+    font-size: 17px;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+
+.product-details p:nth-of-type(5){
+    font-size: 35px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    color: green;
+}
+
+.product-details p:nth-of-type(6){
+    font-size: 17px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    max-width: 500px;
+}
+
+.product-details p:nth-of-type(7){
+    font-size: 17px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    background-color: #f7edff;
+}
+
+.add-to-bag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.add-product {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(127, 255, 155);
+    border: none;
+    font-size: 17px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-product:hover {
+    background-color: rgb(127, 255, 155, 0.8);
+}
+
+.like-product {
+    color: black;
+    padding: 9px;   
+    cursor: pointer;
+    border: 1px solid rgb(193, 193, 193);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.like {
+    width: 40px;
+    height: 40px;
+}

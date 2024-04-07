@@ -1,0 +1,270 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 570px;
+    width: 100%;
+    background-color: rgb(213, 161, 255);
+    padding: 80px;
+    margin-left: -100px;
+}
+
+.hero-list p:nth-of-type(1) {
+    width: 410px;
+    font-size: 42px;
+    font-weight: 500;
+    font-family: 'Oswald';
+    font-style: italic;
+    text-align: center;
+}
+
+.hero-list p:nth-of-type(2) {
+    width: 450px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-list button {
+    align-items: center;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    height: 2.75em;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: .4em 1em .6em;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: border-color .25s cubic-bezier(.4,0,1,1), background-color .25s cubic-bezier(.4,0,1,1), color .25s cubic-bezier(.4,0,1,1);
+    width: 180px;
+    margin-top: 30px;
+}
+
+.cards-container {
+    padding: 80px 0 80px 0;
+    /* background-color: aliceblue; */
+    transition: 1s;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    gap: 20px;
+}
+
+.hide {
+    display: none;
+    transition: 1s;
+  }
+  
+.card {
+    transition: 1s;
+    max-width: 440px;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+    font-family: 'Poppins';
+}
+
+.card > div {
+    text-align: center;
+}
+
+.card-img {
+    height: 355px;
+}
+
+  .myDIV:hover + .hide {
+    display: block;
+    color: black;
+    transition: 1s;
+    text-align: center;
+  }
+
+  .hide:hover {
+    display: block;
+    color: black;
+    transition: 1s;
+  }
+
+.hide {
+    font-size: 14px; 
+    max-width: 380px;
+}
+
+  .myDIV {
+    padding: 20px;
+    transition: 1s;
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 390px;
+  }
+
+.card button {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-family: 'Oswald';
+    font-size: 17px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+.brands {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.brands > p {
+  text-align: center;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.brands-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: antiquewhite; */
+  padding: 10px;
+  gap: 50px;
+  overflow-x: auto;
+  
+}
+
+.brands-container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.almay {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  /* height: 265px; */
+  /* background-image: url('./almay.png'); */
+}
+
+.alva {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  /* height: 265px; */
+  /* background-image: url('./alva.png'); */
+}
+
+.anabella {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  /* height: 265px; */
+  /* background-image: url('./anabella.png');   */
+}
+
+.benefit {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  height: 265px;
+  /* background-image: url('./benefit.png');   */
+}
+
+.maybeline {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  height: 265px;
+  /* background-image: url('./maybeline.png'); */
+}
+
+.wellpeople {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  background-color: rgba(204, 204, 204, 0.185);
+  border-radius: 20px;
+  max-width: 265px;
+  height: 265px;
+  /* background-image: url('./wellpeople.webp'); */
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  /* border-radius: 10px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  /* border-radius: 10px; */
+}
+
+.brands-container p {
+  text-align: left;
+  text-transform: uppercase;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}

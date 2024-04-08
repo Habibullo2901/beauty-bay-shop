@@ -69,6 +69,8 @@ function App() {
         <Route path='/w3people/:productId' element={<W3peopleproduct/>} />
         <Route path='/bag' element={<Bag/>} />
         <Route path='/likes' element={<Likes/>} />
+        <Route path='beautybay/*' element={<Bybeautybay/>} />
+        <Route path='/product/:productId' element={<Blushproduct/>} />
       </Routes>
     </>
   )

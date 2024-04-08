@@ -6,6 +6,7 @@
     font-weight: 500;
     gap: 5px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .modal p:nth-of-type(1) {

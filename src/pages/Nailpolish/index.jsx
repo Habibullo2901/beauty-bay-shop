@@ -8,8 +8,17 @@ import { useDispatch } from 'react-redux';
 import { addSelect } from '../../redux/actionsSlice';
 import { addLike } from '../../redux/actionsSlice';
 import './Nailpolish.css'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Nailpolish = () => {
+  const navigate = useNavigate();
+  const [ region, setRegion ] = useState(localStorage.getItem('country'))
+  const country = useSelector(state => state.actions.region)
+  console.log(country)
+  useEffect(() => {
+    setRegion(country)
+  }, [country])
   const [products, setProducts] = useState([])
   const [ isloading, setIsLoading ] = useState(false)
 
@@ -50,7 +59,7 @@ const Nailpolish = () => {
                   <div><p className='brand'>{product.brand}</p> </div>
                   <p>{product.name}</p>
                   <p>{product.rating} <MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /></p>
-                  <p>{product.price} {product.currency}</p>
+                  <p>{region === 'usa' ? product.price : region === 'uzbekistan' ? (product.price * 12600) : region === 'russia' ? (product.price * 92) : (product.price)} {region === 'usa' ? 'USD' : region === 'uzbekistan' ? 'UZS' : region === 'russia' ? 'RUB' : ''}</p>
                 </div>
                 <div className='like' onClick={() => handleLikeProduct(product)} ><IoHeart className='heart' onClick={() => handleLikeProduct(product)} /></div>
                 <button className='add-product' onClick={ () => handleSelectProduct(product)}>Add to bag</button>

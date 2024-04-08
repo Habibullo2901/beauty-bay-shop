@@ -6,8 +6,11 @@ import { IoHeart } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { removeSelect } from '../../redux/actionsSlice';
 import { addLike } from '../../redux/actionsSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Bag = () => {
+  const navigate = useNavigate();
+  const region = useSelector(state => state.actions.region)
   const bag = useSelector(state => state.actions.selects)
   console.log(bag)
 
@@ -25,6 +28,7 @@ const Bag = () => {
       <div className='blush'>
         <p>Selected products</p>
         <p className='blush_count'>{bag && bag.length} items</p>
+        <span className='back' onClick={() => navigate(-1)}>back</span>
         <div className='blush-cards'>
           {
             bag &&
@@ -35,7 +39,7 @@ const Bag = () => {
                   <div><p className='brand'>{product.brand}</p> </div>
                   <p>{product.name}</p>
                   <p>{product.rating} <MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /></p>
-                  <p>{product.price} {product.currency}</p>
+                  <p>{region === 'usa' ? product.price : region === 'uzbekistan' ? (product.price * 12600) : region === 'russia' ? (product.price * 92) : (product.price)} {region === 'usa' ? 'USD' : region === 'uzbekistan' ? 'UZS' : region === 'russia' ? 'RUB' : ''}</p>
                 </div>
                 <div className='like' onClick={() => handleLikeProduct(product)} ><IoHeart className='heart' onClick={() => handleLikeProduct(product)} /></div>
                 <button className='add-product' onClick={ () => handleSelectProduct(product.id)}>Remove</button>

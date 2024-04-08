@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     likes: JSON.parse(localStorage.getItem('likes')) || [],
-    selects: JSON.parse(localStorage.getItem('selects')) || []
+    selects: JSON.parse(localStorage.getItem('selects')) || [],
+    region: localStorage.getItem('region') || 'choose'
 }
 
 const actionsSlice = createSlice({
@@ -24,11 +25,16 @@ const actionsSlice = createSlice({
         removeSelect: (state, action) => {
             state.selects = state.selects.filter((item) => item.id !== action.payload)
             localStorage.setItem('selects', JSON.stringify(state.selects.filter((item) => item.id !== action.payload.id)))
+        },
+        createRegion: (state, action) => {
+            console.log(action.payload)
+            state.region = action.payload
+            localStorage.setItem('region', state.region)
         }
     }
 })
 
-export const { addLike, removeLike, addSelect, removeSelect } = actionsSlice.actions
+export const { addLike, removeLike, addSelect, removeSelect, createRegion } = actionsSlice.actions
 const actionsReducer = actionsSlice.reducer
 
 export default actionsReducer

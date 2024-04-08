@@ -10,8 +10,19 @@ import { addSelect } from '../../redux/actionsSlice';
 import { addLike } from '../../redux/actionsSlice';
 import { useDispatch } from 'react-redux';
 import './W3peopleproduct.css'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const W3peopleproduct = () => {
+    const navigate = useNavigate();
+
+
+    const [ region, setRegion ] = useState(localStorage.getItem('country'))
+    const country = useSelector(state => state.actions.region)
+    console.log(country)
+    useEffect(() => {
+      setRegion(country)
+    }, [country])
     const [product, setProduct] = useState(null)
     const [ isloading, setIsLoading ] = useState(false)
     const { productId } = useParams();
@@ -41,6 +52,7 @@ const W3peopleproduct = () => {
     :
     (
     <div>
+        <span className='back' onClick={() => navigate(-1)}>back</span>
         <div className='anabelle-productview'>
             {
                 product && (
@@ -51,7 +63,7 @@ const W3peopleproduct = () => {
                             <p>{product.brand}</p>
                             <p>{product.name}</p>
                             <p>{product.rating} <MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /></p>
-                            <p>{product.price} {product.currency}</p>
+                            <p>{region === 'usa' ? product.price : region === 'uzbekistan' ? (product.price * 12600) : region === 'russia' ? (product.price * 92) : (product.price)} {region === 'usa' ? 'USD' : region === 'uzbekistan' ? 'UZS' : region === 'russia' ? 'RUB' : ''}</p>
                             <p>{product.description}</p>
                             <p>Free delivery available <BsFillInfoCircleFill /></p>
                             <div className='add-to-bag'><button className='add-product' onClick={() => handleSelectProduct(product)}>Add to bag</button> <button onClick={() => handleLikeProduct(product)} className='like-product'><IoHeart className='like' /></button></div>

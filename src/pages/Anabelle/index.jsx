@@ -8,8 +8,19 @@ import Footer from '../../components/Footer';
 import { useDispatch } from 'react-redux';
 import { addSelect } from '../../redux/actionsSlice';
 import { addLike } from '../../redux/actionsSlice';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Anabelle = () => {
+  const navigate = useNavigate();
+  const [ region, setRegion ] = useState(localStorage.getItem('country'))
+  const country = useSelector(state => state.actions.region)
+  console.log(country)
+  useEffect(() => {
+    setRegion(country)
+  }, [country])
+
+  
   const [products, setProducts] = useState([])
   const [ isloading, setIsLoading ] = useState(false)
 
@@ -42,6 +53,7 @@ const Anabelle = () => {
       <div className='almay'>
       <p>ANNABELLE</p>
       <p className='almay_count'>{products && products.length} items</p>
+      <span className='back' onClick={() => navigate(-1)}>back</span>
       <div className='product-cards'>
         {
             products &&
@@ -52,7 +64,7 @@ const Anabelle = () => {
                   <div><p className='brand'>{product.brand}</p> </div>
                   <p>{product.name}</p>
                   <p>{product.rating} <MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /><MdOutlineStar /></p>
-                  <p>{product.price} {product.currency}</p>
+                  <p>{region === 'usa' ? product.price : region === 'uzbekistan' ? (product.price * 12600) : region === 'russia' ? (product.price * 92) : (product.price)} {region === 'usa' ? 'USD' : region === 'uzbekistan' ? 'UZS' : region === 'russia' ? 'RUB' : ''}</p>
                 </div>
                 <div className='like' onClick={() => handleLikeProduct(product)} > <IoHeart className='heart'  /></div>
                 <button className='add-product' onClick={() => handleSelectProduct(product)}>Add to bag</button>
